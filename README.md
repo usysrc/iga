@@ -2,7 +2,7 @@
 wave function collapse for love
 
 ## What
-This is an edited version of hempulis the wave function collapse for image generation: http://www.hempuli.com/blogblog/archives/1598
+This is an edited version of hempulis wave function collapse for image generation: http://www.hempuli.com/blogblog/archives/1598
 
 It also includes a main.lua to use in Löve.
 
