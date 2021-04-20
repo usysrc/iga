@@ -39,7 +39,7 @@ function iga:getColours()
 	return colours
 end
 
-function iga:geninit(img, ow,oh,iw,ih,N_)
+function iga:geninit(imgdata, ow,oh,iw,ih,N_)
 	-- Dimensions of the output/input are given by MMF2
 	output_width = ow
 	output_height = oh
@@ -80,13 +80,13 @@ function iga:geninit(img, ow,oh,iw,ih,N_)
 			colours[id] = 0
 		end
 	end
-	local data = img:getData()
+	local data = imgdata
 	for i=0,input_width-1 do
 		for j=0,input_height-1 do
 			local id = i + j * input_width
 			-- MF_getrgb fetches the colour of a given pixel of the input image from MMF's side
 			local r,g,b = data:getPixel(i,j)
-			local colour = string.format("%03d%03d%03d",r,g,b)
+			local colour = string.format("%03d%03d%03d",math.floor(r*255),math.floor(g*255),math.floor(b*255))
 			colour = tonumber(colour)
 			input[id] = colour
 			
